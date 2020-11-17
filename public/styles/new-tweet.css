@@ -24,19 +24,15 @@ form{
 }
 
 .counter {
-  flex-grow: 1;
-  font-family: Bungee;
-  align-items: flex-end;
-  justify-content: flex-end;
-  display: flex;
+  margin-left: auto;
 }
 
 .footer {
+  font-family: Bungee;
   display: flex;
 }
 
 form div.footer button {
   color: #FFFF;
-  font-family: Bungee;
   background-color: #4056A1;
 }

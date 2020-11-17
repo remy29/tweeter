@@ -8,15 +8,29 @@ nav {
 }
 
 .title{
-  align-self: flex-end;
   margin: 1.5em;
 }
 
-.title2 {
+#right-nav{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-left: auto;
   font-family: Source Sans Pro;
-  align-self: center;
 }
+
+#left-nav{
+  font-size: xx-large;
+}
+
+#arrows{
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  color: darkorange;
+  font-size: xx-large
+}
+
+
 
 
 
