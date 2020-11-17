@@ -20,14 +20,30 @@ body {
   font-size: 24px;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f1ec;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- nav {
-   font-family: "Bungee";
- }
+ main {
+  margin-right: 5%;
+  margin-left: 5%;
+  background-color: #f4f1ec;
+}               
 
  body {
    font-family: "Source Sans Pro", sans-serif;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
  }
+
+.container {
+  display: flex;
+  justify-content: center;
+}

@@ -3,8 +3,12 @@ nav {
   background-color: #4056A1;
   color: #FFFF;
   display: flex;
+  font-family: "Bungee";
 }
 
+.light{
+  font-weight: 300;
+}
 .navi {
   display: flex;
   justify-content: flex-end;
@@ -13,7 +17,7 @@ nav {
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
-  font-family: Source Sans Pro;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .left{
