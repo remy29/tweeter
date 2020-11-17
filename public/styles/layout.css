@@ -40,7 +40,3 @@ main {
    font-family: "Source Sans Pro", sans-serif;
  }
 
-.container {
-  display: flex;
-  justify-content: center;
-}

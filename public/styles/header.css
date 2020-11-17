@@ -9,3 +9,7 @@ header{
   font-family: "Source Sans Pro", sans-serif;;
   color: #FFFF;
 }
+
+.light{
+  font-weight: 300;
+}
