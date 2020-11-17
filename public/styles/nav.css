@@ -1,0 +1,48 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFF;
+  display: flex;
+}
+
+.navi {
+  display: flex;
+  justify-content: flex-end;
+}
+.right{
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  font-family: Source Sans Pro;
+}
+
+.left{
+  display: flex;
+  align-items: flex-end;
+  font-size: larger;
+}
+
+.menu{
+  margin: 1.5em;
+}
+.arrowbox{
+  display: flex;
+  justify-content: center;
+}
+
+b{
+  margin-right: 7px;
+}
+
+.arrow{
+  color: darkorange;
+}
+
+
+
+
+
+
+
+
+
