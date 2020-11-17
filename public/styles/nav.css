@@ -4,49 +4,13 @@ nav {
   color: #FFFF;
   display: flex;
   font-family: "Bungee";
-}
-
-.light{
-  font-weight: 300;
-}
-.navi {
-  display: flex;
-  justify-content: flex-end;
-}
-.right{
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-.left{
-  display: flex;
   align-items: flex-end;
-  font-size: larger;
 }
 
-.menu{
+.title{
   margin: 1.5em;
+  font-family: "Bungee", sans-serif;
 }
-.arrowbox{
-  display: flex;
-  justify-content: center;
-}
-
-b{
-  margin-right: 7px;
-}
-
-.arrow{
-  color: darkorange;
-}
-
-
-
-
-
-
 
 
 
