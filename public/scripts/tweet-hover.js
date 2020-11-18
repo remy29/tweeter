@@ -3,6 +3,7 @@ $(document).ready(function() {
   const $usertag = $('article').children().first().children().last()
   const $tweetText = $('article').children().first().next()
   const $footerInfo = $('article').children().last().children().first()
+  
   $('article').on('mouseover', () => {
     $('article').addClass('hover');
     $username.addClass('hover');
