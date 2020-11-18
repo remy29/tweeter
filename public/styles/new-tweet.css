@@ -23,7 +23,12 @@ form{
   font-weight: 600 
 }
 
-.counter {
+.counterB {
+  margin-left: auto;
+}
+
+.counterR{
+  color: red;
   margin-left: auto;
 }
 

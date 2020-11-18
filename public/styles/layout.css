@@ -33,7 +33,7 @@ main {
  main {
   margin-right: 5%;
   margin-left: 5%;
-  background-color: #f4f1ec;
+  flex-direction: column;
 }               
 
  body {
