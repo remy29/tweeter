@@ -5,6 +5,9 @@ nav {
   display: flex;
   justify-content: flex-start;
   font-family: "Bungee", sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .title{
@@ -25,7 +28,6 @@ nav {
 
 #arrows{
   transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
   color: darkorange;
   font-size: xx-large
 }
