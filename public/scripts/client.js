@@ -3,21 +3,23 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const timeAgo = require('./helpers/timeAgo')
+
 const tweetData =  {
   "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
+    "handle": "@SirIsaac"
+  },
   "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
+    "text": "If I have seen further it is by standing on the shoulders of giants"
+  },
   "created_at": 1461116232227
-}
+};
+
 $(document).ready(function() {
 
-  const createTweetElement = function (tweetData) { //remember to add template literals and create random pic picker
-    const randomNum = Math.ceil(Math.random()*59);
+  const createTweetElement = function(tweetData) { //remember to add template literals and create random pic picker
     const $tweet = $(`
     <article class="tweet">
           <header>
@@ -27,7 +29,7 @@ $(document).ready(function() {
           </header>
           <span>${tweetData['content']['text']}</span>
           <footer>
-            <span>${randomNum} minutes ago</span>
+            <span>${timeAgo(tweetData['created_at'])}</span>
             <div class="icons">
               <img src="/images/icons/flag-clear.png"></img>
               <img src="/images/icons/retweet-clear.png"></img>
@@ -35,10 +37,20 @@ $(document).ready(function() {
             </div>
           </footer>
         </article>
-    `)
-    return $tweet
+    `);
+    return $tweet;
   };
 
-})
+  const $tweet = createTweetElement(tweetData);
+
+// Test / driver code (temporary)
+ // to see what it looks like
+$('#tweets-container').append($tweet); 
+
+  /* const renderTweets = function() {
+
+  }; */
+
+});
 
 
