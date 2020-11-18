@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
 // adds and removes .hover class to various html elements to change styling when mouse enters tweet
-  $('article').on('mouseover', function() { 
+  /* $('article').on('mouseover', function() { 
     const $username = $(this).children().first().children().first().next()
     const $usertag = $(this).children().first().children().last()
     const $tweetText = $(this).children().first().next()
@@ -23,7 +23,7 @@ $(document).ready(function() {
     $usertag.removeClass('hover');
     $tweetText.removeClass('hover');
     $footerInfo.removeClass('hover');
-  });
+  }); */
 
   
 });
