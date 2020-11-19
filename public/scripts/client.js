@@ -107,6 +107,10 @@ $(document).ready(function() {
 
       if (error === false) {
         $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
+        .then(() => {
+          $('#counter').val(140)
+          $input.val('')
+        })
         .then(() => loadTweets(false))
         .fail((err) => console.log('invalid request'))
       }

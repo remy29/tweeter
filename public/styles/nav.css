@@ -8,11 +8,12 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 2em
 }
 
-.title{
-  margin: 1.5em;
-}
+
 
 #right-nav{
   display: flex;
@@ -28,8 +29,8 @@ nav {
 
 #arrows{
   transform: rotate(90deg);
-  color: darkorange;
-  font-size: xx-large
+  color: #D9330B;
+  font-size: 40px;
 }
 
 
