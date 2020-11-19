@@ -93,7 +93,12 @@ $(document).ready(function() {
   };  
 
   renderTweets(data);
-
+  
+  $('#form').submit((event) => {
+    event.preventDefault()
+      const $input = $('#tweet-text').serialize();
+      $.ajax(`/tweets`, {method: "POST", data: $input})
+    });
 });
 
 
