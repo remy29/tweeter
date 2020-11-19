@@ -60,15 +60,21 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const loadTweets = function() { //fetches database of tweets and calls back renderTweets
+  const loadTweets = function(initial) { //fetches database of tweets and calls back renderTweets
     $.ajax(`/tweets`, {method: "GET"})
       .then((res) => {
-        renderTweets(res);
+        if (initial) {
+          renderTweets(res);
+        } 
+        if (!initial) {
+          renderTweets([res.pop()])
+        }
       });
   };
 
   const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result
     for (const tweet in tweets) {
+      console.log(tweets[tweet])
       const $tweet = createTweetElement(tweets[tweet]);
       $('#tweets-container').prepend($tweet);
     }
@@ -86,13 +92,10 @@ $(document).ready(function() {
     }
 
     $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
-        .fail((err) => {
-          console.log('user input error')
-        });
-    /* .then(() => renderTweets()) */
+        .then(() => loadTweets(false))
   });
 
-  loadTweets();
+  loadTweets(true);
 });
 
 
