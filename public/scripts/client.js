@@ -1,30 +1,5 @@
 $(document).ready(function() {
 
-  const data = [ // temp hard-coded database
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
   const timeAgo = function(time) {
   
     const date = new Date();  // Gets the current time
@@ -62,13 +37,6 @@ $(document).ready(function() {
   };
   
 
-  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result 
-    for (const tweet in tweets) {
-      $tweet = createTweetElement(tweets[tweet]);
-      $('#tweets-container').append($tweet);
-    }
-  };
-
   const createTweetElement = function(tweet) { // fills out html form with elements of the tweet, and returns it
     const $user = tweet['user']
     const $tweet = $(`
@@ -92,13 +60,28 @@ $(document).ready(function() {
     return $tweet;
   };  
 
-  renderTweets(data);
+  const loadTweets = function () {
+    $.ajax(`/tweets`, {method: "GET"})
+      .then((res) => {
+        renderTweets(res)
+      })
+  };
+
+  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result 
+    for (const tweet in tweets) {
+      $tweet = createTweetElement(tweets[tweet]);
+      $('#tweets-container').prepend($tweet);
+    }
+  };
   
-  $('#form').submit((event) => {
+  $('#form').submit((event) => { // form completion handler, sends user inputs to database
     event.preventDefault()
       const $input = $('#tweet-text').serialize();
       $.ajax(`/tweets`, {method: "POST", data: $input})
+        /* .then(() => renderTweets()) */
     });
+
+  loadTweets()
 });
 
 
