@@ -53,6 +53,7 @@ main {
       width: 30%;
       margin-top: 160px;
       margin-left: 5%;
+      border: 2px solid black
     }
     div > img {
       padding-top: 10%
