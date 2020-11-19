@@ -36,6 +36,11 @@ $(document).ready(function() {
     }
   };
   
+  const escape =  function(str) { // used to make sure user's input is using only safe encoded chars - i.e protects from code injection attack
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const createTweetElement = function(tweet) { // fills out html form with elements of the tweet, and returns it
     const $user = tweet['user'];
@@ -46,13 +51,13 @@ $(document).ready(function() {
             <span>${$user['name']}</span>
             <div>${$user['handle']}</div>
           </header>
-          <span>${tweet['content']['text']}</span>
+          <span>${escape(tweet['content']['text'])}</span>
           <footer>
             <span>${timeAgo(tweet['created_at'])}</span>
             <div class="icons">
-              <img src="/images/icons/flag-clear.png"></img>
-              <img src="/images/icons/retweet-clear.png"></img>
-              <img src="/images/icons/heart-clear.png"></img>
+              <img class="icon1" src="/images/icons/flag-clear.png"></img>
+              <img class="icon2" src="/images/icons/retweet-clear.png"></img>
+              <img class="icon3" src="/images/icons/heart-clear.png"></img>
             </div>
           </footer>
         </article>
@@ -74,7 +79,6 @@ $(document).ready(function() {
 
   const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result
     for (const tweet in tweets) {
-      console.log(tweets[tweet])
       const $tweet = createTweetElement(tweets[tweet]);
       $('#tweets-container').prepend($tweet);
     }
