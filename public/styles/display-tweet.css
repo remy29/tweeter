@@ -20,7 +20,7 @@ main article header {
 }
 
 main article footer {
-  margin-top: 1.6em;
+  margin-top: 30px;
   align-self: center;
   width: 98%;
   height: 23%;
@@ -56,7 +56,7 @@ main article header span {
 
 /* here */
 article > span {
-  margin-left: 1.75em;
+  margin-left: 20px;
   margin-top: auto;
   font-weight: 400;
   word-wrap: break-word;
@@ -66,8 +66,8 @@ article > span {
 
 /* styling for info in footer*/
 footer > span{
-  margin-top: 0.5em;
-  margin-left: 0.75em;
+  margin-top: 5px;
+  margin-left: 15px;
   font-size: medium;
   font-weight: 400;
 }
@@ -75,7 +75,7 @@ footer > span{
 
 .icons{
   margin-left: auto;
-  margin-right: 1em;
+  margin-right: 15px;
   width: 3em;
 }
 

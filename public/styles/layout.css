@@ -60,4 +60,7 @@ main {
     #main-nav {
       background-color: #4056A1;
     }
+    .container {
+      max-width: 50%;
+    }
 }
