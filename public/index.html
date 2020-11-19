@@ -20,8 +20,8 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/tweet-hover.js"></script>
+    <script type="text/javascript" src="/scripts/helpers/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/helpers/icon-hover.js"></script>
   </head>
 
   <body>
@@ -47,54 +47,34 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
+      <div>
+
+        <section class="alert-box" id="alert-boxA">
+          <img class="warn-iconA" src="/images/icons/warning.png" ></img>
+          <span class="warn-text">Oops, seems you forgot to write a tweet</span>
+          <img class="warn-iconB" src="/images/icons/warning.png" ></img>
+        </section>
+
+        <section class="alert-box" id="alert-boxB">
+          <img class="warn-iconA" src="/images/icons/warning.png" ></img>
+          <span class="warn-text">Brevity is the heart of wit. 140 characters or less.</span>
+          <img class="warn-iconB" src="/images/icons/warning.png" ></img>
+        </section>
+
+      </div>
+
       <section class="new-tweet">
         <h2>Compose <span class="light">Tweet</span></h2>
-        <form action="/tweets" method="POST">
+        <form id="form">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="footer">
-            <button id="tweet-btn"type="submit">Tweet</button>
+            <button id="tweet-btn">Tweet</button>
             <output name="counter" class="counterB" id="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
 
-      <section id="tweets-container">
-        
-        <article>
-          <header>
-            <img src="/images/icons/dumpling-profile.png"> 
-            <span>Guy Lexington</span>
-            <div>@Dumplo</div>
-          </header>
-          <span>I'm gonna fly, I swear, just watch, I will.</span>
-          <footer>
-            <span>5 minutes ago</span>
-            <div class="icons">
-              <img src="/images/icons/flag-clear.png"></img>
-              <img src="/images/icons/retweet-clear.png"></img>
-              <img src="/images/icons/heart-clear.png"></img>
-            </div>
-          </footer>
-        </article>
-
-        <article>
-          <header>
-            <img src="/images/icons/gyoza-profile.png"> 
-            <span>Imma Hunnybee</span>
-            <div>@Buzzbuzz</div>
-          </header>
-          <span>Work work work work work work</span>
-          <footer>
-            <span>12 minutes ago</span>
-            <div class="icons">
-              <img src="/images/icons/flag-clear.png"></img>
-              <img src="/images/icons/retweet-clear.png"></img>
-              <img src="/images/icons/heart-clear.png"></img>
-            </div>
-          </footer>
-        </article>
-
-      </section>
+      <section id="tweets-container"></section>
         
     </main>
 

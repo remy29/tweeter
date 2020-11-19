@@ -1,0 +1,3 @@
+- Seperate HTML into seperate files
+-error handling
+-dynamic icons

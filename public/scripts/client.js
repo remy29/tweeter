@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $( "#alert-boxA" ).hide();
+  $( "#alert-boxB" ).hide();
 
   const timeAgo = function(time) {
   
@@ -83,23 +85,35 @@ $(document).ready(function() {
       $('#tweets-container').prepend($tweet);
     }
   };
+
+  $('#tweet-text').on('focus', () => {
+    $( "#alert-boxA" ).slideUp('slow');
+    $( "#alert-boxB" ).slideUp('slow');
+  });
   
   $('#form').submit((event) => { // form completion handler, sends user inputs to database
     event.preventDefault();
+    let error = false; 
     const $input = $('#tweet-text');
-    if ($input.val().length === 0) {
-      return alert('oops, seems you forgot to write a tweet');
-    }
 
-    if ($input.val().length > 140) {
-      return alert('Brevity is the heart of wit. 140 characters or less.');
-    }
+      if ($input.val().length === 0) {
+        $( "#alert-boxA" ).slideDown('slow');
+        error = true;
+      } 
+      if ($input.val().length > 140) {
+        $( "#alert-boxB" ).slideDown('slow');
+        error = true;
+      } 
 
-    $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
+      if (error === false) {
+        $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
         .then(() => loadTweets(false))
+        .fail((err) => console.log('invalid request'))
+      }
   });
 
   loadTweets(true);
+
 });
 
 
