@@ -30,6 +30,7 @@ $(document).ready(function() {
     const date = new Date();  // Gets the current time
     const currentTime = date.getTime(); // getTime() returns milliseconds
     const seconds = (currentTime - time) / 1000; // assigns time difference in seconds
+
   // series of if statements returning 'time ago' phrase
     if (seconds > 30 * 24 * 3600) {
       return "over a year ago"
@@ -69,12 +70,13 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweet) { // fills out html form with elements of the tweet, and returns it
+    const $user = tweet['user']
     const $tweet = $(`
     <article class="tweet">
           <header>
-            <img src="${tweet['user']['avatars']}">    
-            <span>${tweet['user']['name']}</span>
-            <div>${tweet['user']['handle']}</div>
+            <img src="${$user['avatars']}">    
+            <span>${$user['name']}</span>
+            <div>${$user['handle']}</div>
           </header>
           <span>${tweet['content']['text']}</span>
           <footer>
