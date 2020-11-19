@@ -6,15 +6,15 @@ $(document).ready(function() {
     const currentTime = date.getTime(); // getTime() returns milliseconds
     const seconds = (currentTime - time) / 1000; // assigns time difference in seconds
 
-  // series of if statements returning 'time ago' phrase
+    // series of if statements returning 'time ago' phrase
     if (seconds > 30 * 24 * 3600) {
-      return "over a year ago"
+      return "over a year ago";
     }
     if (seconds > 30 * 24 * 3600) {
-      return "over a month ago"
+      return "over a month ago";
     }
     if (seconds > 7 * 24 * 3600) {
-      return "over a week ago"
+      return "over a week ago";
     }
     if (seconds > 2 * 24 * 3600) {
       return "a few days ago";
@@ -38,7 +38,7 @@ $(document).ready(function() {
   
 
   const createTweetElement = function(tweet) { // fills out html form with elements of the tweet, and returns it
-    const $user = tweet['user']
+    const $user = tweet['user'];
     const $tweet = $(`
     <article class="tweet">
           <header>
@@ -58,30 +58,41 @@ $(document).ready(function() {
         </article>
     `);
     return $tweet;
-  };  
-
-  const loadTweets = function () {
-    $.ajax(`/tweets`, {method: "GET"})
-      .then((res) => {
-        renderTweets(res)
-      })
   };
 
-  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result 
+  const loadTweets = function() { //fetches database of tweets and calls back renderTweets
+    $.ajax(`/tweets`, {method: "GET"})
+      .then((res) => {
+        renderTweets(res);
+      });
+  };
+
+  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result
     for (const tweet in tweets) {
-      $tweet = createTweetElement(tweets[tweet]);
+      const $tweet = createTweetElement(tweets[tweet]);
       $('#tweets-container').prepend($tweet);
     }
   };
   
   $('#form').submit((event) => { // form completion handler, sends user inputs to database
-    event.preventDefault()
-      const $input = $('#tweet-text').serialize();
-      $.ajax(`/tweets`, {method: "POST", data: $input})
-        /* .then(() => renderTweets()) */
-    });
+    event.preventDefault();
+    const $input = $('#tweet-text');
+    if ($input.val().length === 0) {
+      return alert('oops, seems you forgot to write a tweet');
+    }
 
-  loadTweets()
+    if ($input.val().length > 140) {
+      return alert('Brevity is the heart of wit. 140 characters or less.');
+    }
+
+    $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
+        .fail((err) => {
+          console.log('user input error')
+        });
+    /* .then(() => renderTweets()) */
+  });
+
+  loadTweets();
 });
 
 
