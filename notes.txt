@@ -1,3 +1,7 @@
 - Seperate HTML into seperate files
 -error handling
 -dynamic icons
+- use viewwidths?
+- hide icons
+
+- height/width media query

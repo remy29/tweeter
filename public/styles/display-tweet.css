@@ -1,3 +1,5 @@
+/* here */
+/* percentage dimensions */
 main article{
   margin-top: 50px;
   margin-bottom: 17px;
@@ -51,12 +53,14 @@ main article header span {
 
 
 /* styling for tweet content*/
+
+/* here */
 article > span {
   margin-left: 1.75em;
   margin-top: auto;
   font-weight: 400;
   word-wrap: break-word;
-  margin-right: 20px;
+  margin-right: 20px; 
 }
 
 

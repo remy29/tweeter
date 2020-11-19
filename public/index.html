@@ -26,7 +26,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="main-nav">
         <span id="left-nav" class="title">tweeter</span>
         <div id="right-nav" class="title">
           <span><b>Write</b> a new tweet</span>
@@ -34,49 +34,51 @@
         </div>
     </nav>
 
-    <header id="main-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Guy <span class="light">Lexington</span></h2>
-      </div>
-    </header>
+    
+      <header id="main-header">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Guy <span class="light">Lexington</span></h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+      <!-- Page-specific (main) content here -->
+      <main class="container">
 
-      <div>
+        <div>
 
-        <section class="alert-box" id="alert-boxA">
-          <img class="warn-iconA" src="/images/icons/warning.png" ></img>
-          <span class="warn-text">Oops, seems you forgot to write a tweet</span>
-          <img class="warn-iconB" src="/images/icons/warning.png" ></img>
+          <section class="alert-box" id="alert-boxA">
+            <img class="warn-iconA" src="/images/icons/warning.png" ></img>
+            <span class="warn-text">Oops, seems you forgot to write a tweet</span>
+            <img class="warn-iconB" src="/images/icons/warning.png" ></img>
+          </section>
+
+          <section class="alert-box" id="alert-boxB">
+            <img class="warn-iconA" src="/images/icons/warning.png" ></img>
+            <span class="warn-text">Brevity is the heart of wit. 140 characters or less.</span>
+            <img class="warn-iconB" src="/images/icons/warning.png" ></img>
+          </section>
+
+        </div>
+
+        <section class="new-tweet">
+          <h2>Compose <span class="light">Tweet</span></h2>
+          <form id="form">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div class="footer">
+              <button id="tweet-btn">Tweet</button>
+              <output name="counter" class="counterB" id="counter" for="tweet-text">140</output>
+            </div>
+          </form>
         </section>
 
-        <section class="alert-box" id="alert-boxB">
-          <img class="warn-iconA" src="/images/icons/warning.png" ></img>
-          <span class="warn-text">Brevity is the heart of wit. 140 characters or less.</span>
-          <img class="warn-iconB" src="/images/icons/warning.png" ></img>
-        </section>
+        <section id="tweets-container"></section>
 
-      </div>
+      </main>
 
-      <section class="new-tweet">
-        <h2>Compose <span class="light">Tweet</span></h2>
-        <form id="form">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="footer">
-            <button id="tweet-btn">Tweet</button>
-            <output name="counter" class="counterB" id="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <section id="tweets-container"></section>
-        
-    </main>
-
+    
   </body>
 </html>
