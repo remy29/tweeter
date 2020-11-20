@@ -36,7 +36,7 @@
         </div>
     </nav>
 
-    
+    <!-- Profile header -->
       <header id="main-header">
         <div>
             <img src="/images/profile-hex.png"> 
@@ -47,9 +47,10 @@
         </div>
       </header>
 
-      <!-- Page-specific (main) content here -->
+      
       <main class="container">
 
+        <!-- Hidden Alerts -->
         <div>
 
           <section class="alert-box" id="alert-boxA">
@@ -66,6 +67,7 @@
 
         </div>
 
+        <!-- Tweet entry form area -->
         <section class="new-tweet">
           <h2>Compose <span class="light">Tweet</span></h2>
           <form id="form">
@@ -77,10 +79,9 @@
           </form>
         </section>
 
+        <!-- jQuery appends new tweets here, see client.js createTweetElement function) -->
         <section id="tweets-container"></section>
 
       </main>
-
-    
   </body>
 </html>
