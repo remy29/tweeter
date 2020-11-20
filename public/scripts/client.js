@@ -3,6 +3,14 @@ $(document).ready(function() {
   $( "#alert-boxA" ).hide();
   $( "#alert-boxB" ).hide();
 
+  const arrowAnimation = function() { // animates arrows in nav bar
+    $('#arrows').animate({opacity: '0.8'});
+    $('#arrows').animate({opacity: '0.4'});
+    $('#arrows').animate({opacity: '0.8'});
+    $('#arrows').animate({opacity: '1'});
+    arrowAnimation();
+  };
+
   const timeAgo = function(time) { // function enabling live created x time ago feature
   
     const date = new Date();  // Gets the current time
@@ -118,6 +126,7 @@ $(document).ready(function() {
   });
 
   loadTweets(true);
+  arrowAnimation();
 
 });
 
