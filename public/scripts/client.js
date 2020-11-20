@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
-  const timeAgo = function(time) {
+  $( "#alert-boxA" ).hide();
+  $( "#alert-boxB" ).hide();
+
+  const timeAgo = function(time) { // function enabling live created x time ago feature
   
     const date = new Date();  // Gets the current time
     const currentTime = date.getTime(); // getTime() returns milliseconds
@@ -36,7 +39,7 @@ $(document).ready(function() {
     }
   };
   
-  const escape =  function(str) { // used to make sure user's input is using only safe encoded chars - i.e protects from code injection attack
+  const escape =  function(str) { // makes sure user's input is using only safe encoded chars 
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -65,27 +68,58 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const loadTweets = function(initial) { //fetches database of tweets and calls back renderTweets
+  const loadTweets = function(initial) { //fetches database of tweets wit ajax and calls back renderTweets with results
     $.ajax(`/tweets`, {method: "GET"})
       .then((res) => {
-        if (initial) {
-          renderTweets(res);
+        if (initial) { 
+          renderTweets(res); // loads all tweets in database
         } 
         if (!initial) {
-          renderTweets([res.pop()])
+          renderTweets([res.pop()]) // loads only the most recent tweet to avoid duplicates
         }
       });
   };
 
-  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then renders the result
+  const renderTweets = function(tweets) { // loops through database array and calls createTweetElement on each tweet then prepends the result
     for (const tweet in tweets) {
       const $tweet = createTweetElement(tweets[tweet]);
       $('#tweets-container').prepend($tweet);
     }
   };
 
+  $('#tweet-text').on('focus', () => {
+    $( "#alert-boxA" ).slideUp('slow');
+    $( "#alert-boxB" ).slideUp('slow');
+  });
+  
+  $('#form').submit((event) => { // form completion handler, sends user inputs to database
+    event.preventDefault();
+    let error = false; 
+    const $input = $('#tweet-text');
+
+      if ($input.val().length === 0) {
+        $( "#alert-boxA" ).slideDown('slow');
+        error = true;
+      } 
+      if ($input.val().length > 140) {
+        $( "#alert-boxB" ).slideDown('slow');
+        error = true;
+      } 
+
+      if (error === false) {
+        $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
+        .then(() => {
+          $('#counter').val(140)
+          $input.val('')
+        })
+        .then(() => loadTweets(false))
+        .fail((err) => console.log('invalid request'))
+      }
+  });
+
   loadTweets(true);
 
 });
 
+module.exports = { timeAgo, escape, createTweetElement, loadTweets, renderTweets }
 

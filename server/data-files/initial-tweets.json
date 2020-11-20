@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Guy lexington",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@Lexmex"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "The thing they say about being vague is that the thing is that being vague is all about the fact that you're vague"
     },
-    "created_at": 1605675762828
+    "created_at": 1605677150115
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Imma Hunnybee",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@Buzzybee"
     },
     "content": {
-      "text": "Hey , ohhhhhh heyyyyy ohhhhhh hey"
+      "text": "Work work work work work work work work"
     },
-    "created_at": 1605762162828
+    "created_at": 1605763550115
   }
 ]
