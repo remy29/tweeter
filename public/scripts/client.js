@@ -112,12 +112,12 @@ $(document).ready(function() {
           $input.val('')
         })
         .then(() => loadTweets(false))
-        .catch((err) => console.log(err))
+        .fail((err) => console.log('invalid request'))
       }
   });
+
   loadTweets(true);
 
 });
-
 
 

@@ -74,39 +74,29 @@ footer > span{
 
 .icons{
   margin-left: auto;
+
   width: 75px;
 }
-
-
 
 article:hover {
   box-shadow: 10px 10px 7px 0px rgba(161,161,161,1);
   font-weight: 600;
-  
 }
 
 /* hover styling for name in header */
-article:hover header span {
+main article:hover header span {
   font-weight: 400;
 }
 
-article:hover footer span {
-  font-weight: 600
+main article:hover span {
+  font-weight: 700
 }
 
 
 /* hover styling for  usertag*/
-article:hover header div{
+main article:hover header div{
   margin-left: auto;
   font-weight: 600;
   color: #C5CDE6;
   margin-right: 25px;
-}
-
-article > footer > div > img {
-  visibility: hidden;
-}
-
-article:hover > footer > div > img {
-  visibility: visible;
 }
