@@ -2,13 +2,13 @@
 $(document).ready(function() {
 
   $('textarea').on('input', () => {
-    const $input = $('#tweet-text');
-    const value = $input.val();
-    const remainingChar = 140 - value.length;
+  
+    const $value = $('#tweet-text').val();
+    const remainingChar = 140 - $value.length;
 
-    $('.container').find('#counter')[0]['innerHTML'] = remainingChar;
+    $('.container').find('#counter')[0]['innerHTML'] = remainingChar; //updates char counter value
 
-    if (remainingChar < 0) {
+    if (remainingChar < 0) { // changes counters class when below a certain value
       $('#counter').removeClass('counterB').addClass('counterR');
     }
     

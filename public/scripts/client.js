@@ -87,7 +87,7 @@ $(document).ready(function() {
     }
   };
 
-  $('#tweet-text').on('focus', () => {
+  $('#tweet-text').on('focus', () => { //hides error messages after user refocuses on textbox
     $( "#alert-boxA" ).slideUp('slow');
     $( "#alert-boxB" ).slideUp('slow');
   });
@@ -97,29 +97,29 @@ $(document).ready(function() {
     let error = false; 
     const $input = $('#tweet-text');
 
-      if ($input.val().length === 0) {
-        $( "#alert-boxA" ).slideDown('slow');
-        error = true;
-      } 
-      if ($input.val().length > 140) {
-        $( "#alert-boxB" ).slideDown('slow');
-        error = true;
-      } 
+    if ($input.val().length === 0) { // catches if user is trying to submit blank tweet triggers warning
+      $( "#alert-boxA" ).slideDown('slow');
+      error = true;
+    } 
+    if ($input.val().length > 140) { // same as line 100, but for over 140 chars
+      $( "#alert-boxB" ).slideDown('slow');
+      error = true;
+    } 
 
-      if (error === false) {
-        $.ajax(`/tweets`, {method: "POST", data: $input.serialize()})
-        .then(() => {
-          $('#counter').val(140)
-          $input.val('')
-        })
-        .then(() => loadTweets(false))
-        .fail((err) => console.log('invalid request'))
-      }
+    if (error === false) {
+      $.ajax(`/tweets`, {method: "POST", data: $input.serialize()}) // ajax post request to database, 
+      .then(() => { // clears text box, resets char counter
+        $('#counter').val(140)
+        $input.val('')
+      })
+      .then(() => loadTweets(false)) // loads new tweet
+      .fail((err) => console.log('invalid request'))
+    }
   });
 
   loadTweets(true);
 
 });
 
-module.exports = { timeAgo, escape, createTweetElement, loadTweets, renderTweets }
+
 
