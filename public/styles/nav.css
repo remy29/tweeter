@@ -20,11 +20,12 @@ nav {
   align-items: center;
   flex-direction: column;
   margin-left: auto;
-  font-family: Source Sans Pro;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #left-nav{
   font-size: xx-large;
+  margin-right: 25%;
 }
 
 #arrows{

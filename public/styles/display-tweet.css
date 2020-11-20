@@ -90,6 +90,10 @@ article:hover header span {
   font-weight: 400;
 }
 
+article:hover footer span {
+  font-weight: 600
+}
+
 
 /* hover styling for  usertag*/
 article:hover header div{
