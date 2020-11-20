@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  $( "#alert-boxA" ).hide();
-  $( "#alert-boxB" ).hide();
+  $("#alert-boxA").hide();
+  $("#alert-boxB").hide();
 
   const arrowAnimation = function() { // animates arrows in nav bar
     $('#arrows').animate({opacity: '0.8'});
@@ -47,11 +47,11 @@ $(document).ready(function() {
     }
   };
   
-  const escape =  function(str) { // makes sure user's input is using only safe encoded chars 
+  const escape =  function(str) { // makes sure user's input is using only safe encoded chars
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   const createTweetElement = function(tweet) { // fills out html form with elements of the tweet, and returns it
     const $user = tweet['user'];
@@ -79,11 +79,11 @@ $(document).ready(function() {
   const loadTweets = function(initial) { //fetches database of tweets wit ajax and calls back renderTweets with results
     $.ajax(`/tweets`, {method: "GET"})
       .then((res) => {
-        if (initial) { 
+        if (initial) {
           renderTweets(res); // loads all tweets in database
-        } 
+        }
         if (!initial) {
-          renderTweets([res.pop()]) // loads only the most recent tweet to avoid duplicates
+          renderTweets([res.pop()]); // loads only the most recent tweet to avoid duplicates
         }
       });
   };
@@ -96,32 +96,32 @@ $(document).ready(function() {
   };
 
   $('#tweet-text').on('focus', () => { //hides error messages after user refocuses on textbox
-    $( "#alert-boxA" ).slideUp('slow');
-    $( "#alert-boxB" ).slideUp('slow');
+    $("#alert-boxA").slideUp('slow');
+    $("#alert-boxB").slideUp('slow');
   });
   
   $('#form').submit((event) => { // form completion handler, sends user inputs to database
     event.preventDefault();
-    let error = false; 
+    let error = false;
     const $input = $('#tweet-text');
 
     if ($input.val().length === 0) { // catches if user is trying to submit blank tweet triggers warning
-      $( "#alert-boxA" ).slideDown('slow');
+      $("#alert-boxA").slideDown('slow');
       error = true;
-    } 
+    }
     if ($input.val().length > 140) { // same as line 100, but for over 140 chars
-      $( "#alert-boxB" ).slideDown('slow');
+      $("#alert-boxB").slideDown('slow');
       error = true;
-    } 
+    }
 
     if (error === false) {
-      $.ajax(`/tweets`, {method: "POST", data: $input.serialize()}) // ajax post request to database, 
-      .then(() => { // clears text box, resets char counter
-        $('#counter').val(140)
-        $input.val('')
-      })
-      .then(() => loadTweets(false)) // loads new tweet
-      .fail((err) => console.log('invalid request'))
+      $.ajax(`/tweets`, {method: "POST", data: $input.serialize()}) // ajax post request to database,
+        .then(() => { // clears text box, resets char counter
+          $('#counter').val(140);
+          $input.val('');
+        })
+        .then(() => loadTweets(false)) // loads new tweet
+        .fail((err) => console.log(err));
     }
   });
 
