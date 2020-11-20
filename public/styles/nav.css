@@ -1,3 +1,6 @@
+/*
+ * Styling for nav bar
+ */
 nav {
   height: 120px;
   background-color: transparent;
@@ -13,9 +16,7 @@ nav {
   padding-top: 2em
 }
 
-
-
-#right-nav{
+#right-nav {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -23,11 +24,11 @@ nav {
   font-family: Source Sans Pro;
 }
 
-#left-nav{
+#left-nav {
   font-size: xx-large;
 }
 
-#arrows{
+#arrows {
   transform: rotate(90deg);
   color: #D9330B;
   font-size: 40px;

@@ -1,4 +1,8 @@
-#main-header{
+/*
+ * Styling for profile header 
+ */
+
+#main-header {
   padding-top: 100px;
   height: 500px;
   display: flex;
@@ -11,6 +15,6 @@
   color: #FFFF;
 }
 
-.light{
+.light {
   font-weight: 300;
 }

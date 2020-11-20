@@ -1,6 +1,7 @@
-/* here */
-/* percentage dimensions */
-main article{
+/*
+ * CSS styling for displayed tweets
+ */
+main article {
   margin-top: 50px;
   margin-bottom: 17px;
   height: 250px;
@@ -28,33 +29,27 @@ main article footer {
   display: flex;
 }
 
-/* styling for user icon */
-main article header img{
+main article header img { /* user icon */
   max-width:230px;
   max-height: 50px;
   width: auto;
   height: auto;
   margin-left: 20px;
 }
-/* styling for @tag*/
-main article header div{
+
+main article header div { /* user handle*/
   margin-left: auto;
   font-weight: 600;
   color: #f4f1ec;
 }
 
-/* styling for user's name*/
-main article header span { 
+main article header span { /* user's name*/
   margin-left: 20px;
   margin-top: auto;
   font-weight: 300;
 }
 
-
-/* styling for tweet content*/
-
-/* here */
-article > span {
+article > span { /* tweet content*/
   margin-left: 20px;
   margin-top: auto;
   font-weight: 400;
@@ -62,29 +57,25 @@ article > span {
   margin-right: 15px; 
 }
 
-
-/* styling for info in footer*/
-footer > span{
+footer > span { /* info in footer*/
   margin-top: 5px;
   margin-left: 15px;
   font-size: medium;
   font-weight: 400;
 }
 
-
-.icons{
+.icons {
   margin-left: auto;
 
   width: 75px;
 }
 
-article:hover {
+article:hover { /* styling variants for mouseover tweet effect */
   box-shadow: 10px 10px 7px 0px rgba(161,161,161,1);
   font-weight: 600;
 }
 
-/* hover styling for name in header */
-main article:hover header span {
+main article:hover header span { /* hover styling for name in header */
   font-weight: 400;
 }
 
@@ -92,9 +83,7 @@ main article:hover footer span {
   font-weight: 700
 }
 
-
-/* hover styling for  usertag*/
-main article:hover header div{
+main article:hover header div { 
   margin-left: auto;
   font-weight: 600;
   color: #C5CDE6;
