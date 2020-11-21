@@ -6,13 +6,13 @@ and Node, Express and MongoDB back-end skills.
 ## Final Product
 
 #### Tablet View Top
-!["Tablet View Top"](https://github.com/remy29/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Tablet View Top"](https://github.com/remy29/tweeter/blob/stretch/docs/tablet-view-top.png?raw=true)
 
 #### Tablet View Scroll
-!["Tablet View Scroll"](https://github.com/remy29/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Tablet View Scroll"](https://github.com/remy29/tweeter/blob/stretch/docs/tablet-view-scroll.png?raw=true)
 
 #### Desktop View
-!["Desktop View"](https://github.com/remy29/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Desktop View"](https://github.com/remy29/tweeter/blob/stretch/docs/desktop-view.png?raw=true)
 
 ## Getting Started
 
