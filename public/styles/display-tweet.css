@@ -67,6 +67,7 @@ footer > span { /* info in footer*/
 .icons {
   margin-left: auto;
   width: 75px;
+  visibility: hidden;
 }
 
 article:hover { /* styling variants for mouseover tweet effect */
