@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $("#alert-boxA").hide();
   $("#alert-boxB").hide();
+  $(".new-tweet").hide();
 
   const arrowAnimation = function() { // animates arrows in nav bar
     $('#arrows').animate({opacity: '0.8'});
@@ -123,6 +124,15 @@ $(document).ready(function() {
         .then(() => loadTweets(false)) // loads new tweet
         .fail((err) => console.log(err));
     }
+  });
+
+  $('#right-nav').on('click', () => {
+    $('.new-tweet').slideToggle('slow');
+    $('#tweet-text').focus();
+  });
+
+  $('#right-nav').on('mouseover', () => {
+    $('#right-nav').css('cursor', 'pointer')
   });
 
   loadTweets(true);
