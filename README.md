@@ -5,8 +5,11 @@ and Node, Express and MongoDB back-end skills.
 
 ## Final Product
 
-#### Tablet View
-!["Tablet View"](https://github.com/remy29/tweeter/blob/master/docs/tablet-view.png?raw=true)
+#### Tablet View Top
+!["Tablet View Top"](https://github.com/remy29/tweeter/blob/master/docs/tablet-view.png?raw=true)
+
+#### Tablet View Scroll
+!["Tablet View Scroll"](https://github.com/remy29/tweeter/blob/master/docs/tablet-view.png?raw=true)
 
 #### Desktop View
 !["Desktop View"](https://github.com/remy29/tweeter/blob/master/docs/desktop-view.png?raw=true)
@@ -28,6 +31,5 @@ and Node, Express and MongoDB back-end skills.
 
 ## Roadmap
 - implementing use of SASS for styling
-- Implemented extra toggles
 
-###### Version 1.0.0
+###### Version 1.5.0
