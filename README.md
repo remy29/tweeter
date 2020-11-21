@@ -9,7 +9,7 @@ and Node, Express and MongoDB back-end skills.
 !["Tablet View Top"](https://github.com/remy29/tweeter/blob/stretch/docs/tablet-view-top.png?raw=true)
 
 #### Tablet View Scroll
-!["Tablet View Scroll"](https://github.com/remy29/tweeter/blob/stretch/docs/tablet-view-scroll.png?raw=true)
+!["Tablet View Scroll"](https://github.com/remy29/tweeter/blob/stretch/docs/tablet-view-scroll.gif?raw=true)
 
 #### Desktop View
 !["Desktop View"](https://github.com/remy29/tweeter/blob/stretch/docs/desktop-view.png?raw=true)
