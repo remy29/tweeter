@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
   $('#right-nav').on('mouseover', () => {
-    $('#right-nav').css('cursor', 'pointer')
+    $('#right-nav').css('cursor', 'pointer');
   });
 
   $(window).on('scroll', () => {
@@ -47,8 +47,8 @@ $(document).ready(function() {
   $("#up-toggle").on('click', () => {
     $('.new-tweet').slideDown('slow');
     $('#tweet-text').focus();
-    $(window).scrollTop(0)
-  })
+    $(window).scrollTop(0);
+  });
 
   setInterval(function() {
     $('#arrows').animate({opacity: '0.8'});
