@@ -89,3 +89,7 @@ main article:hover header div {
   color: #C5CDE6;
   margin-right: 25px;
 }
+
+main article:hover .icons {
+  visibility: visible;
+}
