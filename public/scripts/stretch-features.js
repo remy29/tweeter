@@ -2,9 +2,8 @@ $(document).ready(function() {
   
   $(".new-tweet").hide();
 
-  if ($(window.innerWidth)[0] < 1024) {
-    $("#up-toggle").hide();
-  }
+  $("#up-toggle").hide();
+  
   
   $('#right-nav').on('click', () => {
     $('.new-tweet').slideToggle('slow');
@@ -26,23 +25,29 @@ $(document).ready(function() {
         $("#up-toggle").hide();
       }
     }
+    if ($(window.innerWidth)[0] > 1024) {
+      if ($(window).scrollTop() > 399) {
+        $("#up-toggle").show();
+      }
+      if ($(window).scrollTop() < 399) {
+        $("#up-toggle").hide();
+      }
+    }
   });
 
   $(window).on('resize', () => {
     if ($(window.innerWidth)[0] > 1024) {
-      $("#up-toggle").show();
+      $('#right-nav').show();
     }
-    console.log($(window).scrollTop())
-    if ($(window.innerWidth)[0] < 1024 && $(window).scrollTop() < 399) {
-      console.log('bing')
-      $("#up-toggle").hide();
+    if ($(window.innerWidth)[0] < 1024) {
+      $('#right-nav').hide();
     }
   });
 
   $("#up-toggle").on('click', () => {
     $('.new-tweet').slideDown('slow');
     $('#tweet-text').focus();
-    $(window).srollTop(0)
+    $(window).scrollTop(0)
   })
 
   setInterval(function() {
