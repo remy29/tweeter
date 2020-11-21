@@ -4,13 +4,12 @@ $(document).ready(function() {
   $("#alert-boxB").hide();
   $(".new-tweet").hide();
 
-  /* const arrowAnimation = function() { // animates arrows in nav bar
+  const arrowAnimation = function() { // animates arrows in nav bar
     $('#arrows').animate({opacity: '0.8'});
     $('#arrows').animate({opacity: '0.4'});
     $('#arrows').animate({opacity: '0.8'});
     $('#arrows').animate({opacity: '1'});
-    arrowAnimation();
-  }; */
+  };
 
   const timeAgo = function(time) { // function enabling live created x time ago feature
   
@@ -145,9 +144,16 @@ $(document).ready(function() {
       }
     }
   })
-  loadTweets(true);
-  /* arrowAnimation(); */
+  
 
+  setInterval(function() {
+    $('#arrows').animate({opacity: '0.8'});
+    $('#arrows').animate({opacity: '0.4'});
+    $('#arrows').animate({opacity: '0.8'});
+    $('#arrows').animate({opacity: '1'});
+  }, 2500);
+
+  loadTweets(true);
 });
 
 
