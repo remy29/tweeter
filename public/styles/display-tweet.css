@@ -67,6 +67,7 @@ footer > span { /* info in footer*/
 .icons {
   margin-left: auto;
   width: 75px;
+  visibility: hidden;
 }
 
 article:hover { /* styling variants for mouseover tweet effect */
@@ -82,10 +83,13 @@ main article:hover footer span {
   font-weight: 700
 }
 
-
 main article:hover header div { 
   margin-left: auto;
   font-weight: 600;
   color: #C5CDE6;
   margin-right: 25px;
+}
+
+main article:hover .icons {
+  visibility: visible;
 }

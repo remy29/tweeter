@@ -45,8 +45,6 @@ $(document).ready(function() {
   });
 
   $("#up-toggle").on('click', () => {
-    $('.new-tweet').slideDown('slow');
-    $('#tweet-text').focus();
     $(window).scrollTop(0);
   });
 
