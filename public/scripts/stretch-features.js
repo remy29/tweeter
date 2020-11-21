@@ -1,11 +1,11 @@
 $(document).ready(function() {
   
   $(".new-tweet").hide();
-  
+
   if ($(window.innerWidth)[0] < 1024) {
     $("#up-toggle").hide();
   }
-
+  
   $('#right-nav').on('click', () => {
     $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
@@ -27,6 +27,23 @@ $(document).ready(function() {
       }
     }
   });
+
+  $(window).on('resize', () => {
+    if ($(window.innerWidth)[0] > 1024) {
+      $("#up-toggle").show();
+    }
+    console.log($(window).scrollTop())
+    if ($(window.innerWidth)[0] < 1024 && $(window).scrollTop() < 399) {
+      console.log('bing')
+      $("#up-toggle").hide();
+    }
+  });
+
+  $("#up-toggle").on('click', () => {
+    $('.new-tweet').slideDown('slow');
+    $('#tweet-text').focus();
+    $(window).srollTop(0)
+  })
 
   setInterval(function() {
     $('#arrows').animate({opacity: '0.8'});
