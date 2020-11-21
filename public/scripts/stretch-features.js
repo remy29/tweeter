@@ -1,11 +1,11 @@
+/* This code handles jQuery for animations and function of up-toggle and write new tweet buttons */
 $(document).ready(function() {
   
   $(".new-tweet").hide();
-
   $("#up-toggle").hide();
   
   
-  $('#right-nav').on('click', () => {
+  $('#right-nav').on('click', () => { //
     $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
   });
