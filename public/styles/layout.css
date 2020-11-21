@@ -57,10 +57,9 @@ body {
     width: 30%;
     margin-top: 160px;
     margin-left: 5%;
-    border: 2px solid black
+    box-shadow: 5px 10px 7px 0px rgba(161,161,161,1);
   }
 
- 
   div > img { /* image in profile header */
     padding-top: 10%
   }
@@ -72,5 +71,8 @@ body {
 
   .container { /* refers to main content area, prevents weirdness on large screen */
     max-width: 50%;
+  }
+  body > img#up-toggle {
+    margin-left: 96%;
   }
 }
