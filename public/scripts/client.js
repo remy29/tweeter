@@ -4,13 +4,13 @@ $(document).ready(function() {
   $("#alert-boxB").hide();
   $(".new-tweet").hide();
 
-  const arrowAnimation = function() { // animates arrows in nav bar
+  /* const arrowAnimation = function() { // animates arrows in nav bar
     $('#arrows').animate({opacity: '0.8'});
     $('#arrows').animate({opacity: '0.4'});
     $('#arrows').animate({opacity: '0.8'});
     $('#arrows').animate({opacity: '1'});
     arrowAnimation();
-  };
+  }; */
 
   const timeAgo = function(time) { // function enabling live created x time ago feature
   
@@ -135,8 +135,18 @@ $(document).ready(function() {
     $('#right-nav').css('cursor', 'pointer')
   });
 
+  $(window).on('scroll', () => {
+    if ($(window.innerWidth)[0] < 1024) {
+      if ($(window).scrollTop() > 399) {
+        $('#right-nav').hide();
+      }
+      if ($(window).scrollTop() < 399) {
+        $('#right-nav').show();
+      }
+    }
+  })
   loadTweets(true);
-  arrowAnimation();
+  /* arrowAnimation(); */
 
 });
 
