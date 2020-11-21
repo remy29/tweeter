@@ -26,10 +26,10 @@ $(document).ready(function() {
       }
     }
     if ($(window.innerWidth)[0] > 1024) {
-      if ($(window).scrollTop() > 399) {
+      if ($(window).scrollTop() > 199) {
         $("#up-toggle").show();
       }
-      if ($(window).scrollTop() < 399) {
+      if ($(window).scrollTop() < 199) {
         $("#up-toggle").hide();
       }
     }
@@ -39,7 +39,7 @@ $(document).ready(function() {
     if ($(window.innerWidth)[0] > 1024) {
       $('#right-nav').show();
     }
-    if ($(window.innerWidth)[0] < 1024) {
+    if ($(window.innerWidth)[0] < 1024 && $(window).scrollTop() > 399) {
       $('#right-nav').hide();
     }
   });
