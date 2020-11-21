@@ -1,6 +1,10 @@
 $(document).ready(function() {
   
   $(".new-tweet").hide();
+  
+  if ($(window.innerWidth)[0] < 1024) {
+    $("#up-toggle").hide();
+  }
 
   $('#right-nav').on('click', () => {
     $('.new-tweet').slideToggle('slow');
@@ -15,9 +19,11 @@ $(document).ready(function() {
     if ($(window.innerWidth)[0] < 1024) {
       if ($(window).scrollTop() > 399) {
         $('#right-nav').hide();
+        $("#up-toggle").show();
       }
       if ($(window).scrollTop() < 399) {
         $('#right-nav').show();
+        $("#up-toggle").hide();
       }
     }
   });
