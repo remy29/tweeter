@@ -1,6 +1,6 @@
 # Tweeter Project
 Tweeter is a simple, single-page Twitter clone.
-A lighthouse labs student project using HTML, CSS, JS, jQuery and AJAX  on the front-end, 
+A project using HTML, CSS, JS, jQuery and AJAX  on the front-end, 
 and Node, Express and MongoDB back-end skills.
 
 ## Final Product
